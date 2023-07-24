@@ -1,0 +1,42 @@
+<div class="search-container d-flex align-items-center justify-content-between">
+  <input
+    class="searchbar"
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Search..."
+  />
+  <button
+    routerLink="search"
+    class="btn btn-secondary"
+    (click)="onSearchButtonClick()"
+  >
+    <span class="icon-search"
+      ><i
+        class="fa-solid fa-magnifying-glass fa-rotate-90"
+        style="color: white"
+      ></i
+    ></span>
+  </button>
+</div>
+
+<!-- <div class="search-results" *ngIf="searchResults && searchResults.length > 0">
+  <div *ngIf="searchResults.length > 0">
+    <h5>
+      <i>Aranan kelime: "{{ searchQuery }}"</i>
+    </h5>
+  </div>
+
+  <div *ngFor="let result of searchResults">
+    <div class="row">
+      <div class="col-lg-3 mt-4 mb-4">
+        <img src="{{ result.urlToImage }}" alt="" />
+      </div>
+      <div class="col-9 mt-4 mb-4">
+        <h4>{{ result.title }}</h4>
+        <p>{{ result.description }}</p>
+      </div>
+    </div>
+
+    <hr />
+  </div>
+</div> -->

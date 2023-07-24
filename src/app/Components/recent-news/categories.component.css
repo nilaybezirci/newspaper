@@ -1,0 +1,25 @@
+/* Responsive tasarım için flexbox ve media query */
+.site-section .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-section .col-md-9 {
+  flex-basis: 100%;
+}
+
+.site-section .col-md-6 {
+  flex-basis: 50%;
+}
+
+/* Ekran boyutu 768px'den küçük olduğunda */
+@media (max-width: 768px) {
+  .site-section .row {
+    flex-direction: column;
+  }
+
+  .site-section .col-md-9,
+  .site-section .col-md-6 {
+    flex-basis: 100%;
+  }
+}

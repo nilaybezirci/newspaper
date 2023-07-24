@@ -1,36 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { NewspaperServiceService } from 'src/app/newspaper-service.service';
-import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-editors-pick',
-  templateUrl: './editors-pick.component.html',
-  styleUrls: ['./editors-pick.component.css'],
+  selector: 'app-editors-pick-card',
+  templateUrl: './editors-pick-card.component.html',
+  styleUrls: ['./editors-pick-card.component.css'],
 })
-export class EditorsPickComponent implements OnInit {
-  editorResult: any = [];
+export class EditorsPickCardComponent implements OnInit {
   editorpickpostResult: any = [];
   constructor(private service: NewspaperServiceService) {}
-
   ngOnInit(): void {
-    this.editorspickData();
     this.editorspickPostData();
-  }
-
-  editorspickData() {
-    this.service.getNews().subscribe((response) => {
-      console.log(response, 'editorresult#');
-      if (response && response.articles) {
-        if (Array.isArray(response.articles)) {
-          this.editorResult = response.articles.slice(15, 18);
-          console.log(this.editorResult);
-        } else {
-          this.editorResult = [response.articles];
-        }
-      } else {
-        console.error('invalid response format:results property not found');
-      }
-    });
   }
 
   editorspickPostData() {

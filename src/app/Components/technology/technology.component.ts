@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { NewspaperServiceService } from 'src/app/newspaper-service.service';
 
 @Component({
-  selector: 'app-business',
-  templateUrl: './business.component.html',
-  styleUrls: ['./business.component.css'],
+  selector: 'app-technology',
+  templateUrl: './technology.component.html',
+  styleUrls: ['./technology.component.css'],
 })
-export class BusinessComponent implements OnInit {
-  businessResult: any[] = [];
-
+export class TechnologyComponent implements OnInit {
+  technologyResult: any[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 5;
   currentPopularNewsPage: number = 1;
@@ -19,10 +18,10 @@ export class BusinessComponent implements OnInit {
   }
 
   fetchData() {
-    this.service.getBusinessNews().subscribe((businessResponse) => {
-      console.log(businessResponse, 'businessresult#');
-      if (businessResponse && businessResponse.articles) {
-        this.businessResult = businessResponse.articles;
+    this.service.getTechnologyNews().subscribe((technologyResponse) => {
+      console.log(technologyResponse, 'technologyresult#');
+      if (technologyResponse && technologyResponse.articles) {
+        this.technologyResult = technologyResponse.articles;
       } else {
         console.error('Invalid response format: articles property not found');
       }

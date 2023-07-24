@@ -1,0 +1,28 @@
+/* Özel stil ayarları */
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.img-container {
+  flex: 0 0 30%;
+}
+
+.news-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.content-container {
+  flex: 0 0 70%;
+}
