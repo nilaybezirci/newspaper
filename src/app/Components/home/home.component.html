@@ -1,0 +1,66 @@
+<!--banner start-->
+<div class="site-section mt-5">
+  <div class="container">
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div
+          class="carousel-item"
+          *ngFor="let article of bannerResult; let i = index"
+          [class.active]="i === 0"
+        >
+          <div class="row carousel-frame">
+            <div class="col-md-6">
+              <img src="{{ article.urlToImage }}" class="d-block" alt="..." />
+            </div>
+            <div class="col-md-6">
+              <div class="carousel-caption-item">
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.description }}</p>
+                <p class="author-item">{{ article.author }}</p>
+                <p class="author-item">
+                  {{ article.publishedAt | date : "dd MMMM yyyy" }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+<!--banner end-->
+<div class="row mt-5">
+  <div class="col-lg-8">
+    <app-editors-pick></app-editors-pick>
+  </div>
+  <div class="col-lg-4">
+    <app-trending></app-trending>
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-8">
+    <app-categories></app-categories>
+  </div>
+  <div class="col-lg-4">
+    <app-popular-news></app-popular-news>
+  </div>
+</div>

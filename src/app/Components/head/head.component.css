@@ -1,0 +1,80 @@
+.row {
+  flex-wrap: wrap;
+  display: flex;
+}
+.site-logo {
+  color: black;
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+.ml-md-auto {
+  margin-left: auto !important;
+}
+.d-lg-inline-block {
+  display: inline-block !important;
+}
+.p-3 {
+  padding: 1rem !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+@media (max-width: 912px) and (max-width: 1338px) {
+  .top-social ul {
+    display: none;
+  }
+  .searchGrup {
+    flex-direction: column;
+  }
+  .search-form {
+    width: 60%;
+    margin-top: -10px;
+  }
+}
+
+.search-form .form-control {
+  margin-right: 10px;
+  height: 50px;
+
+  padding-right: 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-form .btn {
+  border-radius: 30px;
+  background: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-color: black;
+}
+.btn {
+  font-size: 14px;
+  letter-spacing: 0.2rem;
+}
+.btn.btn-secondary:active {
+  background-color: #16ff00;
+}
+
+.searchGrup {
+  font-size: 20px;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px;
+  z-index: 100;
+}

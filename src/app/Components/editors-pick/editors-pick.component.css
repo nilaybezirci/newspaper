@@ -1,0 +1,17 @@
+.post-entry-2 .thumbnail {
+  background-size: cover;
+  background-position: center;
+  width: 30%;
+}
+.post-entry-2 .contents {
+  width: 70%;
+  padding: 10px 40px;
+}
+.post-entry-2 .contents h2 {
+  font-size: 15px;
+}
+
+.text-decoration small {
+  text-decoration: underline;
+  font-size: medium;
+}

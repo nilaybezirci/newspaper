@@ -1,0 +1,57 @@
+.carousel-frame {
+  background-color: #f7f7f7;
+}
+
+.carousel-inner .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption-item {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.carousel-caption-item h3 {
+  font-size: 30px;
+  color: black;
+}
+.carousel-caption-item .author-item {
+  color: black;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.carousel-caption-item p {
+  font-size: 20px;
+  padding: 15px;
+
+  color: gray;
+}
+
+@media screen and (max-width: 767px) {
+  .carousel-item img {
+    margin-left: 0;
+    object-fit: fiil;
+  }
+  .carousel-caption {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .carousel-caption h3 {
+    margin-bottom: 5px;
+  }
+}

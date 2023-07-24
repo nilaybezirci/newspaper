@@ -1,0 +1,69 @@
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h5 class="text-decoration"><u>Editor's Pick</u></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngFor="let ep of editorpickpostResult">
+    <div class="col-md-6">
+      <div class="post">
+        <img class="col-12" src="{{ ep.urlToImage }}" alt="" />
+
+        <h2 class="col-12">{{ ep.title }}</h2>
+        <p class="col-12">
+          {{ ep.description }}
+        </p>
+
+        <div class="post-meta">
+          <p>
+            <b>{{ ep.author }} </b> in <b>news</b>
+          </p>
+          <ul class="list-inline small">
+            <li class="list-inline-item">
+              {{ ep.publishedAt | date : "dd MMMM " }}
+            </li>
+            <li class="list-inline-item">6 min read</li>
+            <li class="list-inline-item">
+              <i class="fa-regular fa-star"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row mb-3" *ngFor="let editors of editorResult">
+        <div class="article-item col-12 d-flex flex-row">
+          <div class="col-4" style="min-height: 150px">
+            <img src="{{ editors.urlToImage }}" alt="" class="w-100 h-100" />
+          </div>
+          <div class="col-8 p-3">
+            <h6 class="mt-2">
+              <strong>{{ editors.title }}</strong>
+            </h6>
+            <p>
+              <b> {{ editors.author }}</b> in <b>news</b>
+            </p>
+
+            <ul class="list-inline small">
+              <li class="list-inline-item">
+                {{ editors.publishedAt | date : "dd MMMM " }}
+              </li>
+              <li class="list-inline-item">6 min read</li>
+              <li class="list-inline-item">
+                <i class="fa-regular fa-star"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--editors pick -->
+
+<!--editors pick end -->

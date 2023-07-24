@@ -1,0 +1,27 @@
+.text-decoration small {
+  text-decoration: underline;
+  font-size: medium;
+}
+.row {
+  display: flex;
+}
+
+.container-trending {
+  display: flex;
+}
+
+.container-trending .row {
+  margin-left: auto;
+}
+
+.trending-number {
+  color: #f0eeed;
+}
+h6,
+h2,
+h5,
+p {
+  font-family: "Cabin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
