@@ -2,33 +2,31 @@ import { Component, OnInit } from '@angular/core';
 import { NewspaperServiceService } from 'src/app/newspaper-service.service';
 
 @Component({
-  selector: 'app-business',
-  templateUrl: './business.component.html',
-  styleUrls: ['./business.component.css'],
+  selector: 'app-science',
+  templateUrl: './science.component.html',
+  styleUrls: ['./science.component.css'],
 })
-export class BusinessComponent implements OnInit {
-  businessResult: any[] = [];
-
+export class ScienceComponent implements OnInit {
+  scienceResult: any[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 5;
   currentPopularNewsPage: number = 1;
   itemsPopularNewsPerPage = 3;
+
   constructor(private service: NewspaperServiceService) {}
   ngOnInit(): void {
     this.fetchData();
   }
-
   fetchData() {
-    this.service.getBusinessNews().subscribe((businessResponse) => {
-      console.log(businessResponse, 'businessresult#');
-      if (businessResponse && businessResponse.articles) {
-        this.businessResult = businessResponse.articles;
+    this.service.getScienceNews().subscribe((scienceResponse) => {
+      console.log(scienceResponse, 'scienceresult#');
+      if (scienceResponse && scienceResponse.articles) {
+        this.scienceResult = scienceResponse.articles;
       } else {
         console.error('Invalid response format: articles property not found');
       }
     });
   }
-
   onPageChange(event: number): void {
     this.currentPage = event;
   }

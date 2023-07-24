@@ -1,11 +1,69 @@
 <div class="header">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-12 mt-4 col-lg-6 d-flex">
-        <a href="index.html" class="site-logo"> Newspaper </a>
+  <div class="container-fluid my-4">
+    <button id="hamburger-icon" (click)="openNavbar()" class="d-flex d-md-none">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div
+      class="mobile-navbar d-flex d-md-none p-4 align-items-start"
+      [ngClass]="{ open: isActive }"
+    >
+      <button id="close-icon" (click)="closeNavbar()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <ul class="mobile-navbar-list list-style-none">
+        <li class="nav-item mb-2">
+          <a class="nav-link" routerLink="business" routerLinkActive="active"
+            >Business</a
+          >
+        </li>
+        <li class="nav-item mb-2">
+          <a
+            class="nav-link"
+            routerLink="entertainment"
+            routerLinkActive="active"
+            >Entertainment</a
+          >
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" routerLink="general" routerLinkActive="active"
+            >General</a
+          >
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" routerLink="health" routerLinkActive="active"
+            >Health</a
+          >
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" routerLink="science" routerLinkActive="active"
+            >Science</a
+          >
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" routerLink="sports" routerLinkActive="active"
+            >Sports</a
+          >
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" routerLink="technology" routerLinkActive="active"
+            >Technology</a
+          >
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" routerLink="aboutMe" routerLinkActive="active"
+            >About Me</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div
+      class="align-items-md-center align-items-start d-flex justify-content-md-between flex-column flex-md-row justify-content-center"
+    >
+      <div class="d-flex col-12 col-md-4">
+        <a href="index.html" class="site-logo">Nilay Bezirci </a>
       </div>
-      <div class="searchGrup mt-4 col-12 col-lg-6 d-flex">
-        <div class="ml-md-auto top-social d-none d-lg-inline-block">
+      <div class="searchGrup d-flex col-12 col-md-8">
+        <div class="ml-md-auto top-social d-none d-md-inline-block">
           <ul>
             <a href="#" class="d-inline-block p-3"
               ><span class="icon-facebook"
@@ -30,60 +88,66 @@
             ></a>
           </ul>
         </div>
-        <form action="#" class="search-form d-inline-block">
-          <div class="d-flex">
-            <input type="email" class="form-control" placeholder="Search..." />
-            <button type="submit" class="btn btn-secondary">
-              <span class="icon-search"
-                ><i
-                  class="fa-solid fa-magnifying-glass fa-rotate-90"
-                  style="color: white"
-                ></i
-              ></span>
-            </button>
-          </div>
-        </form>
+        <div class="div col-md-6 col-12">
+          <app-search (searchEvent)="searchNews($event)"></app-search>
+        </div>
       </div>
     </div>
 
     <!--Navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+    <nav class="navbar w-100 d-none d-md-flex">
+      <ul
+        class="navbar-list col-lg-10 col-12 col-xl-8 d-flex align-items-center justify-content-between"
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="business">Business</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Entertainment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">General</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Health</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Science</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sports</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Technology</a>
-          </li>
-        </ul>
-      </div>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="business" routerLinkActive="active"
+            >Business</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="entertainment"
+            routerLinkActive="active"
+            >Entertainment</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="general" routerLinkActive="active"
+            >General</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="health" routerLinkActive="active"
+            >Health</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="science" routerLinkActive="active"
+            >Science</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="sports" routerLinkActive="active"
+            >Sports</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="technology" routerLinkActive="active"
+            >Technology</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="aboutMe" routerLinkActive="active"
+            >About Me</a
+          >
+        </li>
+      </ul>
     </nav>
+
+    <app-search-content
+      [articles]="searchResults"
+      [searchQuery]="searchQuery"
+    ></app-search-content>
   </div>
 </div>

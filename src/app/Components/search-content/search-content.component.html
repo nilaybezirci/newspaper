@@ -1,0 +1,16 @@
+<div class="search-results" *ngIf="articles && articles.length > 0">
+  <div *ngIf="articles.length > 0">
+    <h5>
+      <i>Aranan kelime: "{{ searchQuery }}"</i>
+    </h5>
+  </div>
+  <div *ngFor="let article of articles" class="article">
+    <div class="img-container">
+      <img [src]="article.urlToImage" alt="News Image" class="news-image" />
+    </div>
+    <div class="content-container">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.description }}</p>
+    </div>
+  </div>
+</div>

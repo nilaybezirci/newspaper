@@ -22,18 +22,6 @@ a {
 .d-inline-block {
   display: inline-block !important;
 }
-@media (max-width: 912px) and (max-width: 1338px) {
-  .top-social ul {
-    display: none;
-  }
-  .searchGrup {
-    flex-direction: column;
-  }
-  .search-form {
-    width: 60%;
-    margin-top: -10px;
-  }
-}
 
 .search-form .form-control {
   margin-right: 10px;
@@ -65,10 +53,6 @@ a {
   font-size: 20px;
 }
 
-.d-flex {
-  display: flex !important;
-}
-
 header {
   position: fixed;
   top: 0;
@@ -77,4 +61,45 @@ header {
   background-color: #ffffff;
   padding: 10px;
   z-index: 100;
+}
+ul {
+  list-style: none;
+}
+.navbar-list {
+  list-style: none;
+  margin: auto;
+}
+header {
+  position: relative;
+}
+#hamburger-icon,
+#close-icon {
+  position: absolute;
+  top: 9%;
+  right: 3%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+#hamburger-icon i {
+  font-size: 1.2rem;
+}
+.mobile-navbar {
+  height: 100vh;
+  width: 300px;
+  transition: 0.3s ease;
+  background-color: whitesmoke;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  z-index: 9;
+}
+#close-icon i {
+  font-size: 1.5rem;
+}
+#close-icon {
+  top: 5% !important;
+}
+.mobile-navbar.open {
+  right: 0;
 }

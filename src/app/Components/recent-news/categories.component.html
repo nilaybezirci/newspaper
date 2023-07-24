@@ -1,0 +1,51 @@
+<div class="site-section">
+  <div class="container mt-5">
+    <div class="col-12">
+      <!-- recent -->
+
+      <h5>
+        <u>Recent News</u>
+      </h5>
+      <div
+        class="row d-flex mt-3"
+        *ngFor="
+          let recent of recentResult
+            | paginate
+              : {
+                  itemsPerPage: 10,
+                  currentPage: currentPage,
+                  totalItems: recentResult.length
+                }
+        "
+      >
+        <div class="col-12 col-md-9">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="post-entry-2">
+                <div class="contents order-md-1 pl-0">
+                  <h6>{{ recent.title }}</h6>
+                  <p class="mb-3">{{ recent.description }}</p>
+                  <div class="post-meta">
+                    <span class="d-block">{{ recent.author }} in News</span>
+                    <span class="date-read">
+                      <span class="mx-1">&bullet;</span> 3 min read
+                      <span class="icon-star2"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 categoriesPost">
+              <img src="{{ recent.urlToImage }}" alt="" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination Controls -->
+      <pagination-controls
+        (pageChange)="currentPage = $event"
+      ></pagination-controls>
+    </div>
+  </div>
+</div>

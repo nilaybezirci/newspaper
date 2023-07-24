@@ -18,7 +18,7 @@ export class PopularNewsComponent implements OnInit {
   }
 
   popularBusinessData() {
-    this.service.getBusinessNews().subscribe((response) => {
+    this.service.getPopularNews().subscribe((response) => {
       console.log(response, 'popularpostsresult#');
       if (response && response.articles) {
         if (Array.isArray(response.articles)) {
